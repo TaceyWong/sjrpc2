@@ -1,0 +1,18 @@
+language: python
+python:
+- 3.8
+- 3.7
+- 3.6
+- 3.5
+install: pip install -U tox-travis
+script: tox
+deploy:
+  provider: pypi
+  distributions: sdist bdist_wheel
+  user: tacey_wong
+  password:
+    secure: slLN7k/hiqkpElyJNi7zzKLGA7xIE9tU2ohj/eF82peNjbzPwCtegRvX9A5UiUbhT/M8voAVI7V56+NCENgdilWIgHFhQmkeWNrEmbGsIHbwn0Cm8ruHgw9O3n24kgbiGh3YHFz64e4lqPWEJC4SEql0xj4eaL0tRN8GiT8JrTFc/tmNwh8VkA5OKIFnxSV8RyFZh+8gnmOuKOtdnnpzN3Zfmbnx3/L/T2Mh/PnatGZ2NN+I4J7kVkwjr5/r9C846nHlDGEEgJC3duuQJ2LH1gRvuUqS9CmwKw9AgL0Mrdt1encroW08WupWo4R7l00sT7jKO/cdB9oGZUymPnRvCHbPTutvG4n6l9UTK+n1pFip6/bVwGDk/to9KAhWPUPYTdQQD9Wy94UJmsts4dGbNcSIOPzwqb18rdMjKUBeoK0dBPqEvAKu/ObhOk/DpcQVXf+AouwSENfTgsRphgSCOxwdin5g2FkPk4zIDZsErfCLikli2WcsHC4PKLtvJSmiM9n2w5dlMtUIlALLWJ/lAWqWwxIJjxtVDXDIrKyoXjIP5EHpb4MjDiwMU9K/mLjneEDuhybjAd68+6DNNwHUugnmaFIDqOmAmD7+hykrO2x85iayxK+xCbJ3fRvR8wo2c2w1Qh+IuEELaAQQ7vTu9pfSCKZG6lvnzaK1tkzHHac=
+  on:
+    tags: true
+    repo: tacey_wong/sjrpc2
+    python: 3.8
